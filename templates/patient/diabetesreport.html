@@ -1,0 +1,103 @@
+{% load static %}
+{% static "report" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DIABETES</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="bg-contact2">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<form class="contact2-form validate-form">
+				{% csrf_token %}
+					<span class="contact2-form-title">
+						DIABETES
+					</span>
+					<span class="contact2-form-title">
+						PREDICTED EMR DATA REPORT OF PATIENT
+					</span>
+					<div class="wrap-input2 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input2" type="text" value={{pemail1}}   name = "pemail" readonly> 
+						<span class="focus-input2" data-placeholder="EMAIL"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Doctor Name is required">
+						<input class="input2" type="text" value={{docname1}}   name = "docname" readonly>
+						<span class="focus-input2" data-placeholder="DOCTOR NAME"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Report is required">
+						<input class="input2" type="text" value={{reportof}}   name = "reportof" readonly>
+						<span class="focus-input2" data-placeholder="Report"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Glucose is required">
+						<input class="input2" type="text" value={{glucose}} name = "Glucose1" readonly>
+						<span class="focus-input2" data-placeholder="GLUCOSE"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Bloodpressure is required">
+						<input class="input2" type="text" value={{Blood_Pressure}} name = "Blood_Pressure" readonly>
+						<span class="focus-input2" data-placeholder="BLOODPRESSURE"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Insulin is required">
+						<input class="input2" type="text" value={{Insulin}} name = "Insulin" readonly>
+						<span class="focus-input2" data-placeholder="INSULIN"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="BMI is required">
+						<input class="input2" type="text" value={{BMI}} name = "BMI" readonly>
+						<span class="focus-input2" data-placeholder="BMI"></span>
+					</div>
+                    <div class="wrap-input2 validate-input" data-validate="Predicted is required">
+						<input class="input2" type="text" value={{data22}} name = "data2" readonly>
+						<span class="focus-input2" data-placeholder="RISK OF DIABETES"></span>
+					</div>
+					
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn">
+								<a href="{{baseUrl}}/{{download}}">DOWNLOAD</a>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main1.js' %}"></script>
+	<script>
+$(document).ready(function()
+{$('input').addClass('has-val');})
+</script>
+</body>
+</html>

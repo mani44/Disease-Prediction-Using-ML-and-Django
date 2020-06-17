@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HEART</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="bg-contact2">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<form class="contact2-form validate-form" action="predHeart" method="POST">
+					{% csrf_token %}
+					<span class="contact2-form-title">
+						HEART
+					</span>
+					<span class="contact2-form-title">
+						FILL EMR DATA OF PATIENT
+					</span>
+					<div class="wrap-input2 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input2" type="text" name="pemail" required>
+						<span class="focus-input2" data-placeholder="EMAIL"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Doctor Name is required">
+						<input class="input2" type="text" name="docname" required>
+						<span class="focus-input2" data-placeholder="Doctor Name"></span>
+					</div>
+
+					
+					<div class="wrap-input2 validate-input" data-validate="Report is required">
+						<input class="input2" type="text" name="reportof" value="Diabetes" readonly>
+						<span class="focus-input2" data-placeholder="REPORT"></span>
+                    </div>
+					<div class="wrap-input2 validate-input" data-validate="CP is required">
+						<input class="input2" type="text" name="cp" required>
+						<span class="focus-input2" data-placeholder="CP"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="trestbps is required">
+						<input class="input2" type="text" name="trestbps" required>
+						<span class="focus-input2" data-placeholder="TRESTBPS"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Chol is required">
+						<input class="input2" type="text" name="chol" required>
+						<span class="focus-input2" data-placeholder="CHOLESTROL"></span>
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="fbs is required">
+						<input class="input2" type="text" name="fbs" required>
+						<span class="focus-input2" data-placeholder="FBS"></span>
+					</div>
+
+					<div class="wrap-input2 validate-input" data-validate="EXANG is required">
+						<input class="input2" type="text" name="exang" required>
+						<span class="focus-input2" data-placeholder="EXANG"></span>
+                    </div>
+
+                    <div class="wrap-input2 validate-input" data-validate="CA is required">
+						<input class="input2" type="text" name="ca" required>
+						<span class="focus-input2" data-placeholder="CA"></span>
+                    </div>
+					
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn">
+								PREDICT
+							</button>
+						</div>
+					</div>
+				</form>
+				<div>
+					{% for message in messages %}
+					<h6>{{message}}</h6>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main1.js' %}"></script>
+	<script>
+$(document).ready(function()
+{$('input').addClass('has-val');})
+</script>
+</body>
+</html>
